@@ -11,15 +11,11 @@ if(isset($_POST['nom']) && isset($_POST['categorie'])  && isset($_POST['variete'
     
     
         if($_POST['nom']!="" && $_POST['categorie']!="" && $_POST['variete']!=""){
-            $req = $bdd->prepare("INSERT INTO mybd.annonce (Categorie, Variete, Nom) VALUES ('$categorie', '$variete', '$nom')");
+            $req = $bdd->prepare("INSERT INTO mybd.produits (Categorie, Variete, Nom) VALUES ('$categorie', '$variete', '$nom')");
             
-            $req->execute(array(
-                'Categorie' => $categorie,
-                'Variete' => $variete,
-                'Nom' => $nom,));
+            $req->execute()            
             
-            
-            echo'<script>alert("Deposer fruit : OK")</script>';
+            echo '<script>alert("Deposer fruit : OK")</script>';
             echo '<meta http-equiv="refresh" content=0;URL="index.php">';   
         }
     else{
