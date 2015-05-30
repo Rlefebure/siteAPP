@@ -48,24 +48,35 @@
     
 <body>
     
+    <?php include('header.php') ?>
+    
     <section>
     
-        <form id="formuinscription" method="post">
+        <form id="formuinscription" method="post" action="Deposer.php" enctype="multipart/form-data">
             <fieldset>
                 <legend>Déspoer un nouveau fruit ou légume</legend>
                     
-                <label>Nouveau fruit ou légume</label>
-            
-                    <input type="text" name="nom" id="nom">
-            
-            
-            </fieldset>                            
-        
+                <label>Nouveau fruit ou légume</label>            
+                <input type="text" name="nom" id="nom">
+                
+                <label>Sa catégorie</label>            
+                <input type="text" name="nom" id="nom">
+                
+                <label>Sa variété</label>            
+                <input type="text" name="nom" id="nom">
+                
+                <p><input id="inscrire" type="submit" value="Déposer mon fruit ou légume" /></p>
+                                                        
+            </fieldset>                                    
         </form>
     
     
     </section>
     
+    <footer>
+        <?php include('footer.php') ?>
+        
+    </footer>
     
 </body>
     
