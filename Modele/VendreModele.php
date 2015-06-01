@@ -59,7 +59,7 @@ $req->execute(array(
     echo'<script>alert("Vente OK")</script>';
     echo '<meta http-equiv="refresh" content=0;URL="index.php">';   
 }
-else { /*Manon est la plus belle*/
+else {
 
 }
 }
