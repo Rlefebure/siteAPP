@@ -96,7 +96,7 @@ html, body
 
 
    ul#navi li {
-        margin-left: 75px;
+        margin-left: 40px;
        display: inline;
    }
 
@@ -461,5 +461,8 @@ font-size: 1em;
     margin-top:10%;
 }
 
-
+.Deposer  {
+    color: darkslategrey;
+}
+    
 

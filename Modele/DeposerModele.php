@@ -1,24 +1,28 @@
-<?php
-
-if(isset($_POST['nom']) && isset($_POST['categorie'])  && isset($_POST['variete'])){
+<?php 
+  
+if(isset($_POST['Nom']) && isset($_POST['Categorie'])  && isset($_POST['Variete'])){
     
-    /*$deposer=$_POST['deposer'];*/
-    $categorie=$_POST['categorie'];
-    $variete=$_POST['variete'];
-    $nom=$_POST['nom'];
-    $pseudo=$_SESSION['pseudo'];
+    $Categorie=$_POST['Categorie'];
+    $Variete=$_POST['Variete'];
+    $Nom=$_POST['Nom'];
     $bdd = new PDO('mysql:host=localhost;dbname=mydb;charset=utf8', 'root', 'root');
     
     
-        if($_POST['nom']!="" && $_POST['categorie']!="" && $_POST['variete']!=""){
-            $req = $bdd->prepare("INSERT INTO mybd.produits (Categorie, Variete, Nom) VALUES ('$categorie', '$variete', '$nom')");
+        if($_POST['Nom']!="" && $_POST['Categorie']!="" && $_POST['Variete']!=""){
+            $req = $bdd->prepare("INSERT INTO mydb.produits (Categorie, Variete, Nom) VALUES ('$Categorie', '$Variete', '$Nom')");
+            $req->execute(array(
+                
+                'Categorie' => $Categorie,
+                'Variete' => $Variete,
+                'Nom' => $Nom));
             
-            $req->execute()            
             
             echo '<script>alert("Deposer fruit : OK")</script>';
             echo '<meta http-equiv="refresh" content=0;URL="index.php">';   
+        
+            
         }
-    else{
-    }
+   
+   
 }
 ?>
