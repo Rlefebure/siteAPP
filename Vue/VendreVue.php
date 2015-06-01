@@ -83,7 +83,7 @@
                     <input type="text" name="produit1" id="produit1" /></p>
                     <p><label for="quantite1">Quantité (pièces, poids)*  : </label>
                     <input type="text" name="quantite1" id="quantite1" /></p>
-                <p><label for="prix1">Prix*  : </label>
+                    <p><label for="prix1">Prix*  : </label>
                     <input type="text" name="prix1" id="prix1" /></p></br>
             
      

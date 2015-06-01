@@ -34,10 +34,15 @@
             
 <div class="slideshow">
 	<ul>
-		<li><img src="Vue/images/LogoPh.png" alt="" width="1000" height="350" /></li>
-		<li><img src="Vue/images/header2.jpeg" alt=""  width="1000" height="350" /></li>
-		<li><img src="Vue/images/header3.jpeg" alt=""  width="1000" height="350" /></li>
-		<li><img src="Vue/images/reload.png" alt=""  width="1000" height="350" /></li>
+        <?php $bdd = new PDO('mysql:host=localhost;dbname=mydb;charset=utf8', 'root', 'root');
+
+$query = $bdd->prepare("SELECT Photo FROM mydb.annonce ORDER BY DateAnnonce DESC LIMIT 4");
+$data = $query->execute();
+        while($d = $data->fetch()){
+            
+		echo "<li><img src=\"Vue/images/".$data['Photo']."\"  width=\"1000\" height=\"350\" /></li>";
+}?>
+		
 	</ul>
 </div>
 
