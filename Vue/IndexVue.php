@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -36,12 +35,13 @@
 	<ul>
         <?php $bdd = new PDO('mysql:host=localhost;dbname=mydb;charset=utf8', 'root', 'root');
 
-$query = $bdd->prepare("SELECT Photo FROM mydb.annonce ORDER BY DateAnnonce DESC LIMIT 4");
+$query = $bdd->prepare("SELECT Photo FROM mydb.annonce ORDER BY DateAnnonce DESC LIMIT (1,1)");
 $data = $query->execute();
-        while($d = $data->fetch()){
+        
+        ?>
             
-		echo "<li><img src=\"Vue/images/".$data['Photo']."\"  width=\"1000\" height=\"350\" /></li>";
-}?>
+		<li><img src="images/<?php echo $data['Photo'];?>" width="1000" height="350" alt="fuck" /></li>
+
 		
 	</ul>
 </div>
@@ -75,7 +75,8 @@ $data = $query->execute();
                             ?>
                     </ul>
             </nav>
-            
+            <a href="https://twitter.com/P_dHappy"><img src="Vue/images/cuicui.png" width="50"></a>
+            <a href="https://www.facebook.com/pages/Pomme-dHappy/489376677895861"><img src="Vue/images/fb.png" width="40"></a>
         </section>    
        
     <footer>
